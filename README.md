@@ -49,7 +49,14 @@ SFDC-ci-toolkit comes with handy npm scripts for CI :
   "profile-reconciliation": "gulp profile-reconciliation",
   "generate-package": "gulp generate-package",
   "generate-data-dictionary": "gulp generate-data-dictionary",
-  "display-coverage": "gulp read-coverage"
+  "display-coverage": "gulp read-coverage",
+  "prepare-runtests": "gulp prepare-runtests",
+  "retrieve": "gulp retrieve",
+  "dataload-insert": "gulp dataload-insert (--concurrencyMode <Serial | Parallel>)",
+  "dataload-update": "gulp dataload-update (--concurrencyMode <Serial | Parallel>)",
+  "dataload-upsert": "gulp dataload-upsert --extIdField <myExtIdFieldName> (--concurrencyMode <Serial | Parallel>)",
+  "dataload-delete": "gulp dataload-delete (--concurrencyMode <Serial | Parallel>)"
+  "oneline-profile-and-ps": "gulp oneline-profile-and-ps"
 }
 ```
 Combined them smartly according to your need as a developer or as a release manager ;)
@@ -65,7 +72,14 @@ Here is the list of scripts with their description available in the toolkit
 * **prepare-runtests** : Run it to generate SF_RUNTESTS based on the src/classes folder and the SF_TESTSUFFIX variable
 * **profile-completion** : Run it to complete your non admin profiles & permission sets with the removed user permissions
 * **profile-reconciliation** : Run it to check the consistency of your repo and the profiles & permission sets definition into it
-* **display-coverage** : Run it after having deploy with test runned. It will display the code coverage.
+* **display-coverage** : Run it after having deploy with test runned. It will display the code coverage
+* **prepare-runtests** : Run it to prepare the test classes to run for your specified test deployment
+* **retrieve** : Run it to retrieve package.xml from Salesforce to your repo
+* **dataload-insert** : Run it to insert data from csv file
+* **dataload-update** : Run it to update data from csv file
+* **dataload-upsert** : Run it to upsert data from csv file
+* **dataload-delete** : Run it to delete data from csv file
+* **oneline-profile-and-ps** : Run it to one line profiles and permission sets
 
 ## Usage Example
 Let's imagine you finalized the three first steps of [building a Conference Management app](https://trailhead.salesforce.com/en/projects/salesforce_developer_workshop/steps/creating_apex_class) in your sandbox and you want to deploy it to your dev org!
@@ -295,6 +309,8 @@ module.exports = (gulp plugins, options) => {
 
 ## Built With
 
+* [decompress](https://github.com/kevva/decompress) - Extracting archives made easy
+* [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js) - XML to JavaScript object converter.
 * [envalid](https://github.com/af/envalid) - Environment variable validation for Node.js.
 * [gulp](https://github.com/gulpjs/gulp) - The streaming build system.
 * [gulp-jsforce-exec-anon](https://github.com/scolladon/gulp-jsforce-exec-anon) - Execute anonymous using JSforce.
@@ -302,7 +318,7 @@ module.exports = (gulp plugins, options) => {
 * [gulp-rename](https://github.com/hparra/gulp-rename) - Rename files easily.
 * [gulp-util](https://github.com/gulpjs/gulp-util) - Utilities for gulp plugins.
 * [gulp-zip](https://github.com/sindresorhus/gulp-zip) - ZIP compress files.
-* [jsforce-metadata-tools](https://github.com/jsforce/jsforce-metadata-tools) - Tools for deploying/retrieving package files using Metadata API via JSforce.
+* [sfdc-authent-delegate](https://github.com/scolladon/sfdc-authent-delegate) - Authentication delegate for Salesforce.
 * [sfdc-generate-codeclimate-coverage](https://github.com/scolladon/sfdc-generate-codeclimate-coverage) - Code coverage converter to lcov from deployment result.
 * [sfdc-generate-package](https://github.com/scolladon/sfdc-generate-package) - generate package.xml from source.
 * [sfdc-git-package](https://github.com/scolladon/sfdc-git-package) - Create Package.xml and destructiveChangesPre.xml from git diff between two commits.

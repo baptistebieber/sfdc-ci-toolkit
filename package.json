@@ -1,6 +1,6 @@
 {
   "name": "sfdc-ci-toolkit",
-  "version": "1.3.0",
+  "version": "2.2.0",
   "description": "CI Scripts for Salesforce projects",
   "keyword": [
     "salesforce",
@@ -30,24 +30,35 @@
     "generate-data-dictionary": "gulp generate-data-dictionary",
     "display-coverage": "gulp read-coverage",
     "prepare-runtests": "gulp prepare-runtests",
+<<<<<<< HEAD
     "retrieve": "gulp retrieve"
+=======
+    "retrieve": "gulp retrieve",
+    "dataload-insert": "gulp dataload-insert",
+    "dataload-update": "gulp dataload-update",
+    "dataload-upsert": "gulp dataload-upsert",
+    "dataload-delete": "gulp dataload-delete",
+    "oneline-profile-and-ps": "gulp oneline-profile-and-ps"
+>>>>>>> upstream/master
   },
   "dependencies": {
     "decompress": "^4.2.0",
-    "envalid": "^3.1.1",
-    "gulp": "^3.9.1",
-    "gulp-jsforce-exec-anon": "^1.1.0",
+    "envalid": "^4.1.4",
+    "gulp": "^4.0.0",
+    "gulp-jsforce-exec-anon": "^2.0.1",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.4.0",
     "gulp-util": "^3.0.8",
-    "gulp-zip": "^4.0.0",
-    "jsforce-metadata-tools": "^1.2.2",
+    "gulp-zip": "^4.2.0",
+    "sfdc-authent-delegate": "^1.0.2",
     "sfdc-generate-codeclimate-coverage": "^1.0.5",
     "sfdc-generate-data-dictionary": "^1.0.1",
-    "sfdc-generate-package": "^2.2.0",
-    "sfdc-git-package": "^2.0.6",
+    "sfdc-generate-package": "^2.2.4",
+    "sfdc-git-package": "^2.0.8",
     "sfdc-pps-completion": "^1.0.2",
     "sfdc-pps-reconciliation": "^1.0.0",
-    "sfdc-specified-test": "^1.0.1"
+    "sfdc-specified-test": "^1.0.1",
+    "through2": "^2.0.3",
+    "xml2js": "^0.4.19"
   }
 }
